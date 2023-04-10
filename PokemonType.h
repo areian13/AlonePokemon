@@ -1,6 +1,4 @@
-#include <array>
-#include <string>
-using namespace std;
+#pragma once
 
 #define NUMBER_OF_TYPE 15
 
@@ -12,7 +10,7 @@ enum PokemonType
 	GRASS,
 	ELECTR,
 	ICE,
-	FIGTH,
+	FIGHT,
 	POISON,
 	GROUND,
 	FLYING,
@@ -31,11 +29,12 @@ enum PokemonType
 array<array<float, NUMBER_OF_TYPE>, NUMBER_OF_TYPE> typeMatchingTable =
 {
 	array<float, NUMBER_OF_TYPE>
+	//
 	{ 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, 1.0F, POOR, DONT, 1.0F },
 	{ 1.0F, POOR, POOR, NICE, 1.0F, NICE, 1.0F, 1.0F, POOR, 1.0F, 1.0F, NICE, POOR, 1.0F, POOR },
 	{ 1.0F, NICE, POOR, POOR, 1.0F, 1.0F, 1.0F, 1.0F, NICE, 1.0F, 1.0F, 1.0F, NICE, 1.0F, POOR },
 	{ 1.0F, POOR, NICE, POOR, 1.0F, 1.0F, 1.0F, POOR, NICE, POOR, 1.0F, 1.0F, NICE, 1.0F, POOR },
-	{ 1.0F, 1.0F, NICE, POOR, POOR, 1.0F, 1.0F, 1.0F, DONT, NICE, 1.0F, 1.0F, 1.0F, 1.0F, NICE },
+	{ 1.0F, 1.0F, NICE, POOR, POOR, 1.0F, 1.0F, 1.0F, DONT, NICE, 1.0F, 1.0F, 1.0F, 1.0F, POOR },
 	{ 1.0F, 1.0F, POOR, NICE, 1.0F, POOR, 1.0F, 1.0F, NICE, NICE, 1.0F, 1.0F, 1.0F, 1.0F, NICE },
 	{ NICE, 1.0F, 1.0F, 1.0F, 1.0F, NICE, 1.0F, POOR, 1.0F, POOR, POOR, POOR, NICE, DONT, 1.0F },
 	{ 1.0F, 1.0F, 1.0F, NICE, 1.0F, 1.0F, 1.0F, POOR, POOR, 1.0F, 1.0F, NICE, POOR, POOR, 1.0F },
