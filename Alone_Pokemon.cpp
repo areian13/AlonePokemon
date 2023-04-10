@@ -128,7 +128,7 @@ void CaptureMode()
 
 	int enemyPokemonLevel = fightPokemon.m_level ;
 	int enemyPokemonDicNum = probOfOccur(gen);
-	IndivPokemon enemyPokemon(캐터피, enemyPokemonLevel+1);
+	IndivPokemon enemyPokemon(enemyPokemonDicNum, enemyPokemonLevel+1);
 	printf("야생의 %s(이)가 나타났다!\n", enemyPokemon.m_name.c_str());
 	printf("가랏 %s!!\n", fightPokemon.m_name.c_str());
 
