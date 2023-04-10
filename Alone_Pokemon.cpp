@@ -126,9 +126,9 @@ void CaptureMode()
 
 	IndivPokemon fightPokemon = player.m_hangingPokeList[player.m_fightPokemonIndex];
 
-	int enemyPokemonLevel = fightPokemon.m_level ;
+	int enemyPokemonLevel = fightPokemon.m_level - 2;
 	int enemyPokemonDicNum = probOfOccur(gen);
-	IndivPokemon enemyPokemon(enemyPokemonDicNum, enemyPokemonLevel+1);
+	IndivPokemon enemyPokemon(enemyPokemonDicNum, enemyPokemonLevel);
 	printf("야생의 %s(이)가 나타났다!\n", enemyPokemon.m_name.c_str());
 	printf("가랏 %s!!\n", fightPokemon.m_name.c_str());
 
@@ -257,7 +257,7 @@ void CaptureMode()
 	}
 }
 
-int main()
+void LoadFile()
 {
 	// 만약 게임을 처음 실행한다면(= 세이브파일이 존재하지 않고)  포켓몬 선택 실행
 	if (player.IsAllDead())
@@ -271,8 +271,10 @@ int main()
 		scanf("%d", &choice);
 		player.TakeNewPokemon((choice - 1) * 3 + 1);
 	}
-	bool isGaming = true;
-	while (isGaming)
+}
+void Gaming()
+{
+	while (true)
 	{
 		printf("1. 대전모드\n");
 		printf("2. 수집모드\n");
@@ -311,10 +313,20 @@ int main()
 		case 0:
 		{
 			printf("게임을 종료합니다.");
-			/*세이브 파일 저장 구현*/
-			isGaming = false;
+			return;
 			break;
 		}
 		}
 	}
+}
+void SaveFile()
+{
+
+}
+
+int main()
+{
+	LoadFile();
+	Gaming();
+	SaveFile();
 }
